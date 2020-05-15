@@ -21,7 +21,7 @@ class WinPkg < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     ENV['HOMEBREW_CC'] = 'gcc'
-    ENV['HOMEBREW_CC'] = 'g++'
+    ENV['HOMEBREW_CXX'] = 'g++'
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
