@@ -19,7 +19,7 @@ class WinPkg < Formula
     FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "export CC=gcc & export CXX=g++"
+    system "export HOMEBREW_CC=gcc & export HOMEBREW_CXX=g++"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
