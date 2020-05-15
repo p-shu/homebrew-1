@@ -1,3 +1,5 @@
+### $ brew install win --env-std
+
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
@@ -5,7 +7,7 @@
 # Edited
 require "fileutils"
 
-class WinPkg < Formula
+class Win < Formula
   desc ""
   homepage ""
   url "http://wwweic.eri.u-tokyo.ac.jp/WIN/pub/win/WIN_pkg-3.0.6.tar.gz"
