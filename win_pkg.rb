@@ -1,4 +1,5 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
+# Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
@@ -19,7 +20,7 @@ class WinPkg < Formula
     FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "export HOMEBREW_CC=gcc & export HOMEBREW_CXX=g++"
+    system "export HOMEBREW_CC=gcc"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
