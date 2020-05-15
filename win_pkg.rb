@@ -12,7 +12,7 @@ class WinPkg < Formula
   sha256 "1bbf89bfa557370fc5804951de1bf0a412825050d0c861806d457805ec956e7f"
 
   # depends_on "cmake" => :build
-  depends_on :gcc, g++
+  depends_on :"gcc", "g++"
 
   def install
     # Avoid "Empty installation" error which will be caused (Edited)
