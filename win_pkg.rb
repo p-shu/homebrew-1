@@ -1,5 +1,4 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
-# Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
@@ -13,6 +12,7 @@ class WinPkg < Formula
   sha256 "1bbf89bfa557370fc5804951de1bf0a412825050d0c861806d457805ec956e7f"
 
   # depends_on "cmake" => :build
+  depends_on :gcc, g++
 
   def install
     # Avoid "Empty installation" error which will be caused (Edited)
