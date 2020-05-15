@@ -1,6 +1,10 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+
+# Edited
+require "fileutils"
+
 class WinPkg < Formula
   desc ""
   homepage ""
@@ -10,6 +14,9 @@ class WinPkg < Formula
   # depends_on "cmake" => :build
 
   def install
+    # Avoid "Empty installation" error which will be caused (Edited)
+    FileUtils.mkdir_p("#{prefix}") unless File.exists?("#{prefix}")
+    FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     system "./configure", "--disable-debug",
