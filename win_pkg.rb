@@ -19,11 +19,11 @@ class WinPkg < Formula
     FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
+    system "export CC=gcc & export CXX=g++"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "CC=gcc", "CXX=g++"
+                          "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
     system "make"
     system "make install"
