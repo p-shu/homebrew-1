@@ -24,8 +24,8 @@ class WinPkg < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make install"
+    system "sudo make"
+    system "sudo make install"
   end
 
   test do
