@@ -26,8 +26,7 @@ class WinPkg < Formula
                           "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
     system "export HOMEBREW_CC=gcc"
-    system "sudo make"
-    system "sudomake install"
+    system "make install"
   end
 
   test do
