@@ -22,10 +22,11 @@ class WinPkg < Formula
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
+                          "CC=gcc", "CXX=g++"
     # system "cmake", ".", *std_cmake_args
-    system "sudo make"
-    system "sudo make install"
+    system "make"
+    system "make install"
   end
 
   test do
@@ -41,4 +42,3 @@ class WinPkg < Formula
     system "false"
   end
 end
-
