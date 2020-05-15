@@ -25,8 +25,9 @@ class WinPkg < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make install"
+    system "export HOMEBREW_CC=gcc"
+    system "sudo make"
+    system "sudomake install"
   end
 
   test do
