@@ -20,7 +20,7 @@ class WinPkg < Formula
     FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "CC=gcc ./configure", "--disable-debug",
+    system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
