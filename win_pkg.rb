@@ -12,7 +12,7 @@ class WinPkg < Formula
   sha256 "1bbf89bfa557370fc5804951de1bf0a412825050d0c861806d457805ec956e7f"
 
   # depends_on "cmake" => :build
-  depends_on :gcc
+  depends_on :x11
 
   def install
     # Avoid "Empty installation" error which will be caused (Edited)
@@ -20,7 +20,8 @@ class WinPkg < Formula
     FileUtils.touch("#{prefix}/dummy")
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "export HOMEBREW_CC=gcc"
+    ENV['HOMEBREW_CC'] = 'gcc'
+    ENV['HOMEBREW_CC'] = 'g++'
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
